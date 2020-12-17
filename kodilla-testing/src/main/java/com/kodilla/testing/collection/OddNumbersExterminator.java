@@ -7,12 +7,10 @@ import java.util.*;
 public class OddNumbersExterminator {
 
 
-    public static ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
+    public static List<Integer> exterminate(List<Integer> numbers) {
 
-        ArrayList<Integer>oddNumbers = new ArrayList<Integer>();
-        if (numbers.isEmpty()){
-            return numbers;
-        }else {
+        List<Integer>oddNumbers = new ArrayList<>();
+
             for (Integer number : numbers) {
                 if (number % 2 == 0) {
                     oddNumbers.add(number);
@@ -21,5 +19,5 @@ public class OddNumbersExterminator {
             return oddNumbers;
         }
     }
-}
+
 
