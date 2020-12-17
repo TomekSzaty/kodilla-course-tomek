@@ -28,6 +28,9 @@ public class CollectionTestSuite {
     public static void afterAll() {
         System.out.println("Test Suite: end");
     }
+    @DisplayName("when use method on empty List, " +
+            "then should return empty list"
+    )
 
     @Test
     void testCaseOddNumbersExterminatorEmptyList() {
@@ -36,12 +39,15 @@ public class CollectionTestSuite {
 
         //When
         ArrayList<Integer>listNumbers = OddNumbersExterminator.exterminate(emptyList);
-            System.out.println("Testing" + listNumbers);
+            System.out.println("Testing " + listNumbers);
 
         //Then
         Assert.assertEquals(emptyList, listNumbers);
 
     }
+    @DisplayName("when use method on normal List, " +
+            "then should return  exterminate contents of list"
+    )
 
 
     @Test
