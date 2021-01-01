@@ -1,9 +1,9 @@
 package com.kodilla.testing.shape;
 
 class Triangle implements Shape {
-
-    public Triangle(int i) {
-
+    private double field;
+    public Triangle(double field) {
+        this.field  = field;
     }
 
     @Override
@@ -13,6 +13,9 @@ class Triangle implements Shape {
 
     @Override
     public double getField() {
-        return 0;
+        return field;
+    }
+    public String toString() {
+        return "Triangle";
     }
 }

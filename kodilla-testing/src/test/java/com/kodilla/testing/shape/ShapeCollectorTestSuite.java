@@ -34,9 +34,10 @@ public class ShapeCollectorTestSuite {
         @Test
         public void shouldAddFigure() {
             //Given
-            ShapeCollector shapeCollector = new ShapeCollector(Arrays.asList(
-                    new Circle(23),
-                    new Triangle(12)));
+            List<Shape>shapeList;
+            ShapeCollector shapeCollector = new ShapeCollector( shapeList = new ArrayList<>());
+                    shapeList.add(new Circle(23));
+                    shapeList.add(new Triangle(12));
 
             //When
             shapeCollector.addFigure(new Square(12));
@@ -49,11 +50,14 @@ public class ShapeCollectorTestSuite {
         @Test
         public void shouldRemoveFigure() {
             //Given
+            List<Shape>shapeList;
             Circle circle = new Circle(23);
             Triangle triangle = new Triangle(12);
             Square square = new Square(12);
-            ShapeCollector shapeCollector = new ShapeCollector(Arrays.asList(
-                    circle, triangle, square));
+            ShapeCollector shapeCollector = new ShapeCollector(shapeList = new ArrayList<>());
+            shapeList.add(circle);
+            shapeList.add(triangle);
+            shapeList.add(square);
             //When
             shapeCollector.removeFigure(square);
             int actualListSize = shapeCollector.getShapeList().size();

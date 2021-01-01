@@ -17,4 +17,7 @@ public class Square implements Shape {
     public double getField() {
         return field;
     }
+    public String toString() {
+        return "Square";
+    }
 }
