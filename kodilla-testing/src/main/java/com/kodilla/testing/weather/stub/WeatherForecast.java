@@ -1,6 +1,5 @@
 package com.kodilla.testing.weather.stub;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -22,41 +21,30 @@ public class WeatherForecast {
     }
 
     public Double calculateAverage() {
-        Map<String, Double> resultMap = new HashMap<>();
-        for (Map.Entry<String, Double> temperature :
-                temperatures.getTemperatures().entrySet()) {
-                resultMap.put(temperature.getKey(), temperature.getValue());
-        }
+        Map<String, Double> map = temperatures.getTemperatures();
 
         Double sum = 0.0;
-        Double average;
 
-        for (Double i : resultMap.values()) {
+        for (Double i : map.values()) {
             sum += i;
         }
-        average = (sum /= resultMap.size());
-        return average;
+        return sum / map.size();
     }
 
     public Double calculateMediana() {
-        Map<String, Double> resultMap = new HashMap<>();
-        for (Map.Entry<String, Double> temperature :
-                temperatures.getTemperatures().entrySet()) {
-                resultMap.put(temperature.getKey(), temperature.getValue());
-        }
-        Collection<Double> collectionValues = resultMap.values();
-        List<Double> theList = new ArrayList<>();
+        Map<String, Double> map = temperatures.getTemperatures();
 
-        Double mediana = 0.0;
-        Double averageMediana = 0.0;
+        List<Double> theList = new ArrayList<>(map.values());
         Collections.sort(theList);
 
-        theList.addAll(collectionValues);
+        Double mediana;
+        Double averageMediana;
+
         if (theList.size() % 2 == 0) {
             averageMediana = theList.get(theList.size() / 2) + theList.get(theList.size() / 2 - 1);
             mediana = averageMediana / 2.0;
         } else {
-            mediana = (double) theList.get(theList.size() / 2);
+            mediana = theList.get(theList.size() / 2);
         }
         return mediana;
     }
