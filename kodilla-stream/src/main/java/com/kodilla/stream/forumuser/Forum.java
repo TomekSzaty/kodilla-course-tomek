@@ -9,7 +9,7 @@ public class Forum {
 
     public Forum(){
         theUserList.add(new ForumUser("Maks",1, 'M',
-                1988, 06, 24, 54));
+                1988, 06, 24, 1));
         theUserList.add(new ForumUser("Lola",2, 'F',
                 1997, 04, 20, 4));
         theUserList.add(new ForumUser("Tom ",3, 'M',
