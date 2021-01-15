@@ -30,21 +30,21 @@ public class WorldTestSuite {
         Country mexico = new Country("Mexico", BigDecimal.valueOf(1000000000));
         Country cuba = new Country("Cuba", BigDecimal.valueOf(1000000000));
 
-        europe.addCountryName(germany);
-        europe.addCountryName(sweden);
-        europe.addCountryName(switzerland);
+        europe.addCountry(germany);
+        europe.addCountry(sweden);
+        europe.addCountry(switzerland);
 
-        asia.addCountryName(afghanistan);
-        asia.addCountryName(armenia);
-        asia.addCountryName(bhutan);
+        asia.addCountry(afghanistan);
+        asia.addCountry(armenia);
+        asia.addCountry(bhutan);
 
-        northAmerica.addCountryName(usa);
-        northAmerica.addCountryName(mexico);
-        northAmerica.addCountryName(cuba);
+        northAmerica.addCountry(usa);
+        northAmerica.addCountry(mexico);
+        northAmerica.addCountry(cuba);
 
-        world.addContinentWorld(europe);
-        world.addContinentWorld(asia);
-        world.addContinentWorld(northAmerica);
+        world.addContinent(europe);
+        world.addContinent(asia);
+        world.addContinent(northAmerica);
 
         //When
         BigDecimal allPeopleQuantity = world.getPeopleQuantity();

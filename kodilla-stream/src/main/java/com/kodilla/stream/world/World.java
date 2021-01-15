@@ -8,7 +8,7 @@ public final class World  {
 
     private final List<Continent> listContinentsWorld = new ArrayList<>();
 
-    public boolean addContinentWorld (Continent continent){
+    public boolean addContinent(Continent continent){
         return listContinentsWorld.add(continent);
     }
 
