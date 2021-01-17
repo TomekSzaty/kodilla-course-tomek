@@ -150,11 +150,12 @@ public class BoardTestSuite {
         double notFinishedTasksAvgTime = project.getTaskLists ().stream ()
                 .filter ( inProgressTasks::contains )
                 .flatMap ( x -> x.getTasks ().stream () )
+                .filter(t -> t.getDeadline().isBefore(LocalDate.now()))
                 .mapToDouble (t -> ChronoUnit.DAYS.between(t.getCreated(),LocalDate.now()))
                 .average ()
                 .orElse ( 0.0 );
 
         //Then
-        assertEquals(10.0, notFinishedTasksAvgTime, 0.01);
+        assertEquals(20.0, notFinishedTasksAvgTime, 0.01);
     }
 }
