@@ -5,14 +5,8 @@ import java.lang.ArithmeticException;
 public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
-        try {
-            if (b == 0) {
-                throw new ArithmeticException(" NIE DZIEL PRZEZ ZERO");
-            }
-        } catch (ArithmeticException e) {
-            System.out.println("Exception!!:  " + e.getMessage());
-        } finally {
-            System.out.println("Result of a divide between " + a + " and " + b + " is: ");
+        if (b == 0) {
+            throw new ArithmeticException(" NIE DZIEL PRZEZ ZERO");
         }
         return a / b;
     }
@@ -20,9 +14,15 @@ public class FirstChallenge {
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
+        try {
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
 
-        double result = firstChallenge.divide(3, 0);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception!!:  " + e.getMessage());
 
-        System.out.println(result);
+        } finally {
+            System.out.println("Result of a divide is above. ");
+        }
     }
 }
