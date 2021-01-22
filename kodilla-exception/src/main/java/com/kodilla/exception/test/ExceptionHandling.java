@@ -17,7 +17,7 @@ public class ExceptionHandling {
         FlightSearch flightSearch = new FlightSearch();
 
         try {
-            flightSearch.findFlight(new Flight("warsaw", "Sydney"));
+            flightSearch.findFlight(new Flight("Los Angeles", "Sydney"));
         } catch (RouteNotFoundException e) {
             System.out.println("BRAK MIASTA DOCELOWEGO: " + e);
         } finally {
