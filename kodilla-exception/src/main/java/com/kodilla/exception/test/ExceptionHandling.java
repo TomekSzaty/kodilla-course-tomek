@@ -17,19 +17,11 @@ public class ExceptionHandling {
         FlightSearch flightSearch = new FlightSearch();
 
         try {
-            flightSearch.findFlight(new Flight("New York", "Sydney"));
+            flightSearch.findFlight(new Flight("warsaw", "Sydney"));
         } catch (RouteNotFoundException e) {
-            System.out.println("UPS..." + e.getMessage());
+            System.out.println("BRAK MIASTA DOCELOWEGO: " + e);
         } finally {
-            System.out.println("Have a nice day");
-        }
-        System.out.println("****************************************************************");
-        try {
-            flightSearch.findFlight(new Flight("New York", "Los Angeles"));
-        } catch (RouteNotFoundException e) {
-            System.out.println("UPS...Flight not found" );
-        } finally {
-            System.out.println("Have a nice day");
+            System.out.println("Wyszukiwanie zakończone");
         }
     }
 }
