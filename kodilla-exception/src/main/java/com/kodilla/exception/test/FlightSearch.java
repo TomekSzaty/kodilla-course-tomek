@@ -11,12 +11,18 @@ public class FlightSearch {
         airports.put("Los Angeles", true);
         airports.put("Sydney", true);
 
+
         if (airports.containsKey(flight.getArrivalAirport()) &&
                 (airports.containsKey(flight.getDepartureAirport())) &&
                 (airports.get(flight.getArrivalAirport())) &&
                 (airports.get(flight.getDepartureAirport()))) {
 
+
+        } else if (airports.isEmpty()) {
+            throw new RouteNotFoundException();
+
         } else throw new RouteNotFoundException();
+
 
         return true;
     }
