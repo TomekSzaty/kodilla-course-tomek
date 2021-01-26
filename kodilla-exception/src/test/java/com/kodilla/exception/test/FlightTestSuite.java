@@ -6,16 +6,33 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class FlightTestSuite {
+
     @Test
-    void testFlightSearch() {
+    void shouldFindFlight() throws RouteNotFoundException {
         //Given
         FlightSearch flightSearch = new FlightSearch();
 
-        //Then & when
-        assertDoesNotThrow(() -> flightSearch.findFlight(new Flight("New York","Sydney")));
+        //when
+        boolean result = flightSearch.findFlight(new Flight("New York","Sydney"));
+
+        //then
+        assertTrue(result);
     }
+
     @Test
-    void testFlightSearchIsWrong() {
+    void shouldNotFindFlight() throws RouteNotFoundException {
+        //Given
+        FlightSearch flightSearch = new FlightSearch();
+
+        //when
+        boolean result = flightSearch.findFlight(new Flight("Los Angeles","Tokyo"));
+
+        //then
+        assertFalse(result);
+    }
+
+    @Test
+    void shouldThrowException() {
         //Given
         FlightSearch flightSearch = new FlightSearch();
 

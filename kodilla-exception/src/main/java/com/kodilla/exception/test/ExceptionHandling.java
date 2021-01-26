@@ -17,12 +17,12 @@ public class ExceptionHandling {
         FlightSearch flightSearch = new FlightSearch();
 
         try {
-            flightSearch.findFlight(new Flight("New York", "Sydney"));
-            System.out.println("Lot dostepny");
+            flightSearch.findFlight(new Flight("Los Angeles", "Tokyo"));
+            System.out.println("FLIGHT AVAILABLE");
         } catch (RouteNotFoundException e) {
-            System.out.println("BRAK MIASTA DOCELOWEGO: " + e);
+            System.out.println("AIRPORT IS NOT AVAILABLE: " + e);
         } finally {
-            System.out.println("Wyszukiwanie zakończone");
+            System.out.println("SEARCHING END");
         }
     }
 }
