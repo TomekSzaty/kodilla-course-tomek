@@ -9,7 +9,7 @@ public class MainStream {
         System.out.println(movieStore.getMovies());
         String challengeMovieStore = movieStore.getMovies().entrySet().stream()
                 .flatMap(e -> e.getValue().stream())
-                .collect(Collectors.joining(" ! "));
+                .collect(Collectors.joining("!"));
         System.out.println(challengeMovieStore);
     }
 }
