@@ -46,4 +46,11 @@ public class FlightAirports {
         return Objects.hash(getNumberFlight(), getDepartureAirport(), getArrivalAirport(), isAvailable());
     }
 
+    @Override
+    public String toString() {
+        return "Airports{" +
+                ", departureAirport='" + departureAirport + '\'' +
+                ", arrivalAirport='" + arrivalAirport + '\'' +
+                '}';
+    }
 }
