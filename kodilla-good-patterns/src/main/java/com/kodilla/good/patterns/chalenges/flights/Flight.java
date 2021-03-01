@@ -3,14 +3,14 @@ package com.kodilla.good.patterns.chalenges.flights;
 
 import java.util.Objects;
 
-public class FlightAirports {
+public class Flight {
 
     private final String numberFlight;
     private final String departureAirport;
     private final String arrivalAirport;
     private final boolean isAvailable;
 
-     public FlightAirports(String numberFlight, String departureAirport, String arrivalAirport, boolean isAvailable) {
+     public Flight(String numberFlight, String departureAirport, String arrivalAirport, boolean isAvailable) {
          this.numberFlight = numberFlight;
          this.departureAirport = departureAirport;
          this.arrivalAirport = arrivalAirport;
@@ -36,8 +36,8 @@ public class FlightAirports {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FlightAirports)) return false;
-        FlightAirports that = (FlightAirports) o;
+        if (!(o instanceof Flight)) return false;
+        Flight that = (Flight) o;
         return isAvailable() == that.isAvailable() && getNumberFlight().equals(that.getNumberFlight()) && getDepartureAirport().equals(that.getDepartureAirport()) && getArrivalAirport().equals(that.getArrivalAirport());
     }
 
