@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTestSuite {
 
-
     @Test
     void testCalculationAdd() {
         //Given
@@ -20,6 +19,7 @@ public class CalculatorTestSuite {
         //then
         assertEquals(10, sum);
     }
+
     @Test
     void testCalculationSub() {
         //Given
@@ -31,6 +31,7 @@ public class CalculatorTestSuite {
         //then
         assertEquals(2, sum);
     }
+
     @Test
     void testCalculationMul() {
         //Given
@@ -42,6 +43,7 @@ public class CalculatorTestSuite {
         //then
         assertEquals(24, sum);
     }
+
     @Test
     void testCalculationDiv() {
         //Given
