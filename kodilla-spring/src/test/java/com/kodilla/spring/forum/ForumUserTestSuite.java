@@ -1,6 +1,5 @@
 package com.kodilla.spring.forum;
 
-
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
@@ -16,17 +15,12 @@ class ForumUserTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-         ForumUser forumUser = context.getBean(ForumUser.class);
+        ForumUser forumUser = context.getBean(ForumUser.class);
 
-         //When
+        //When
         String userName = forumUser.getUserName();
 
         //Then
         assertEquals("John Smith", userName);
-
     }
-    @Test
-    void contextLoads() {
-    }
-
 }
