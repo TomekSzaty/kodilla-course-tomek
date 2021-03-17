@@ -35,7 +35,7 @@ class KodillaSpringApplicationTests {
         //When
         String name = shape.getShapeName();
         //Then
-        assertEquals("This is a trianglele", name);
+        assertEquals("This is triangle", name);
     }
 
     @Test
@@ -43,7 +43,7 @@ class KodillaSpringApplicationTests {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape) context.getBean("square");
+        Shape shape = (Shape) context.getBean("createSquare");
         //When
         String name = shape.getShapeName();
         //Then

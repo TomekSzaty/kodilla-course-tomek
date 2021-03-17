@@ -1,6 +1,5 @@
 package com.kodilla.jdbc;
 
-import com.mysql.cj.xdevapi.Result;
 import org.junit.jupiter.api.Test;
 
 import java.sql.ResultSet;

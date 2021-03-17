@@ -27,5 +27,4 @@ public final class SimpleProduct {
         SimpleProduct that = (SimpleProduct) o;
         return Objects.equals(getProductName(), that.getProductName());
     }
-
 }
