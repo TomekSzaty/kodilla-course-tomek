@@ -50,13 +50,13 @@ public class CompanyDaoTestSuite {
         assertNotEquals(0, grayMatterId);
 
         //CleanUp
-        try {
+        /*try {
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(grayMatterId);
         } catch (Exception e) {
             //do nothing;
-        }
+        }*/
 
     }
 }

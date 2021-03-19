@@ -22,7 +22,7 @@ public class Employee {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue//(strategy=GenerationType.IDENTITY)
     @NotNull
     @Column(name = "EMPLOYEE_ID", unique = true)
     public int getId() {
