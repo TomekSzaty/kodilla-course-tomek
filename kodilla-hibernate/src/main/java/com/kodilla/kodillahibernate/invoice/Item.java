@@ -9,7 +9,7 @@ import java.util.List;
 @Table(name = "ITEM")
 public class Item {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @Column(name = "ITEM_ID", unique = true)
     private int id;

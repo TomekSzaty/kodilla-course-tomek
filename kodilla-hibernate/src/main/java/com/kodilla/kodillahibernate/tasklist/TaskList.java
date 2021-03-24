@@ -26,7 +26,7 @@ public class TaskList {
 
     @Id
     @NotNull
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID", unique=true)
     public int getId() {
         return id;
