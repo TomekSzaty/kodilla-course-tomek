@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "TASKS")
-public class Task {
+public final class Task {
 
     private int id;
     private String description;
@@ -18,14 +18,12 @@ public class Task {
     private TaskList taskList;
 
     public Task() {
-
     }
 
     public Task(String description, int duration) {
         this.description = description;
         this.created = new Date();
         this.duration = duration;
-
     }
 
     @Id
@@ -42,24 +40,28 @@ public class Task {
     }
 
     @NotNull
-    @Column(name = "CREATED")
+    @Column(name="CREATED")
     public Date getCreated() {
         return created;
     }
 
-    @Column(name = "DURATION")
+    @Column(name="DURATION")
     public int getDuration() {
         return duration;
     }
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "TASKS_FINANCIALS_ID")
+    @JoinColumn(name= "TASKS_FINANCIALS_ID")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }
 
+    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
+        this.taskFinancialDetails = taskFinancialDetails;
+    }
+
     @ManyToOne
-    @JoinColumn(name = "TASKLIST_ID")
+    @JoinColumn(name = "TASKLISTS_ID")
     public TaskList getTaskList() {
         return taskList;
     }
@@ -68,23 +70,19 @@ public class Task {
         this.taskList = taskList;
     }
 
-    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
-        this.taskFinancialDetails = taskFinancialDetails;
-    }
-
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    private void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    private void setCreated(Date created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
-    private void setDuration(int duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 }

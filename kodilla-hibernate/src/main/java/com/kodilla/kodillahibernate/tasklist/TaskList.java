@@ -1,6 +1,5 @@
 package com.kodilla.kodillahibernate.tasklist;
 
-
 import com.kodilla.kodillahibernate.task.Task;
 
 import javax.persistence.*;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "TASKSLIST")
+@Table(name="TASKLISTS")
 public class TaskList {
 
     private int id;
@@ -20,20 +19,21 @@ public class TaskList {
     public TaskList() {
     }
 
-    public TaskList( String listName, String description) {
+    public TaskList(String listName, String description) {
         this.listName = listName;
         this.description = description;
     }
 
     @Id
-    @GeneratedValue
     @NotNull
-    @Column(name = "ID", unique = true)
+    @GeneratedValue
+    @Column(name="ID", unique=true)
     public int getId() {
         return id;
     }
 
-    @Column(name = "LISTNAME")
+    @NotNull
+    @Column(name="LISTNAME")
     public String getListName() {
         return listName;
     }
@@ -53,10 +53,6 @@ public class TaskList {
         return tasks;
     }
 
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
-
     private void setId(int id) {
         this.id = id;
     }
@@ -68,4 +64,10 @@ public class TaskList {
     private void setDescription(String description) {
         this.description = description;
     }
+
+    private void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
 }
+
+

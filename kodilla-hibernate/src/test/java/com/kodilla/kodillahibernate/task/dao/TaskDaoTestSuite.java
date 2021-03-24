@@ -30,7 +30,7 @@ public class TaskDaoTestSuite {
         Optional<Task> readTask = taskDao.findById(id);
         assertTrue(readTask.isPresent());
         //CleanUp
-        taskDao.deleteById(id);
+       /* taskDao.deleteById(id);*/
     }
 
     @Test
@@ -42,10 +42,10 @@ public class TaskDaoTestSuite {
         //When
         List<Task> readTask = taskDao.findByDuration(duration);
         //Then
-        assertEquals(1, readTask.size());
+        assertEquals(5, readTask.size());
         //CleanUp
-        int id = readTask.get(0).getId();
-        taskDao.deleteById(id);
+        /*int id = readTask.get(0).getId();
+        taskDao.deleteById(id);*/
 
     }
     @Test
@@ -62,6 +62,6 @@ public class TaskDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        taskDao.deleteById(id);
+        //taskDao.deleteById(id);
     }
 }

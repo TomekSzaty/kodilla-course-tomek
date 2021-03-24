@@ -18,7 +18,6 @@ public class InvoiceDaoTestSuite {
 
     @Test
     void testInvoiceDaoSave() {
-
         //Given
         Product product = new Product("Mouse");
         Product product2 = new Product("Keyboard");
@@ -41,7 +40,7 @@ public class InvoiceDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        invoiceDao.deleteById(id);
+        //invoiceDao.deleteById(id);
 
     }
 

@@ -3,15 +3,38 @@ package com.kodilla.kodillahibernate.invoice;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "ITEM")
 public class Item {
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ITEM_ID", unique = true)
     private int id;
+
+    @ManyToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name = "PRODUCT_ID")
     private Product product;
+
+    @Column(name = "PRICE")
     private BigDecimal price;
+
+    @Column(name = "QUANTITY")
     private int quantity;
+
+    @Column(name = "VALUE")
     private BigDecimal value;
+
+    @ManyToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name = "INVOICE_ID")
     private Invoice invoice;
 
     public Item() {
@@ -23,39 +46,27 @@ public class Item {
         this.quantity = quantity;
         this.value = value;
     }
-    @Id
-    @GeneratedValue
-    @NotNull
-    @Column(name = "ID", unique = true)
+
     public int getId() {
         return id;
     }
-    @ManyToOne(
-            targetEntity = Product.class,
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    @JoinColumn(name = "PRODUCT")
+
     public Product getProduct() {
         return product;
     }
-    @Column(name = "PRICE")
+
     public BigDecimal getPrice() {
         return price;
     }
-    @Column(name = "QUANTITY")
+
     public int getQuantity() {
         return quantity;
     }
-    @Column(name = "VALUE")
+
     public BigDecimal getValue() {
         return value;
     }
-    @ManyToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    @JoinColumn(name = "INVOICE_ID")
+
     public Invoice getInvoice() {
         return invoice;
     }

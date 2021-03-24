@@ -20,7 +20,7 @@ public class Company {
         this.name = name;
     }
     @Id
-    @GeneratedValue//(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @NotNull
     @Column(name = "COMPANY_ID", unique = true)
     public int getId() {
