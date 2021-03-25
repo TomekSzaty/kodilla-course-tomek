@@ -24,7 +24,7 @@ public class TaskListDaoTestSuite {
     @Test
     void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList("To learn programming", LISTNAME);
+        TaskList taskList = new TaskList(LISTNAME,"To learn programming" );
 
         //When
         taskListDao.save(taskList);
@@ -35,8 +35,8 @@ public class TaskListDaoTestSuite {
         assertEquals("MYLIST", name);
 
         //CleanUp
-        /*int id = readTaskList.get(0).getId();
-        taskListDao.deleteById(id);*/
+        int id = readTaskList.get(0).getId();
+        taskListDao.deleteById(id);
     }
     @Test
     void testTaskListDaoSaveWithTasks() {
@@ -65,7 +65,8 @@ public class TaskListDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        //taskListDao.deleteById(id);
+        taskListDao.deleteById(id);
 
     }
+
 }
