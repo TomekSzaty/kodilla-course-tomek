@@ -12,6 +12,13 @@ import java.util.List;
         resultClass = Company.class
 )
 
+@NamedQuery(
+        name = "Company.retrieveCompanyByName",
+        query = " FROM Company WHERE :COMPANY_NAME LIKE CONCAT('%', :COMPANY_NAME, '%') "
+
+)
+
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
@@ -26,18 +33,21 @@ public class Company {
     public Company(String name) {
         this.name = name;
     }
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @Column(name = "COMPANY_ID", unique = true)
     public int getId() {
         return id;
     }
+
     @NotNull
     @Column(name = "COMPANY_NAME")
     public String getName() {
         return name;
     }
+
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
