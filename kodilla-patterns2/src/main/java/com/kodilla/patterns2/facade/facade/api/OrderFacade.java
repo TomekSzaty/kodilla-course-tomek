@@ -23,11 +23,11 @@ public class OrderFacade {
         boolean wasError = false;
         Long orderId = shopService.openOrder(userId);
         LOGGER.info("Registration new order, ID: " + orderId);
-        if (orderId < 0) {
+        /*if (orderId < 0) {
             LOGGER.error(OrderProcessingException.ERR_NOT_AUTHORISED);
             wasError = true;
             throw new OrderProcessingException(OrderProcessingException.ERR_NOT_AUTHORISED);
-        }
+        }*/
         try {
             for (ItemDto orderItem : order.getItems()) {
                 LOGGER.info("Adding item " + orderItem.getProductId() + ", " + orderItem.getQuantity() + " pcs");
@@ -35,17 +35,18 @@ public class OrderFacade {
             }
             BigDecimal value = shopService.calculateValue(orderId);
             LOGGER.info("Order value is: " + value + "USD");
-            if (!shopService.doPayment(orderId)) {
+           /* if (!shopService.doPayment(orderId)) {
                 LOGGER.error(OrderProcessingException.ERR_PAYMENT_REJECTED);
                 wasError = true;
                 throw new OrderProcessingException(OrderProcessingException.ERR_PAYMENT_REJECTED);
-            }
+
+            }*/
             LOGGER.info("Order is ready to submit");
-            if (!shopService.submitOrder(orderId)) {
+            /*if (!shopService.submitOrder(orderId)) {
                 LOGGER.error(OrderProcessingException.ERR_SUBMITTING_ERROR);
                 wasError = true;
                 throw new OrderProcessingException(OrderProcessingException.ERR_SUBMITTING_ERROR);
-            }
+            }*/
             LOGGER.info("Order " + orderId + "submitted");
 
         } finally {
