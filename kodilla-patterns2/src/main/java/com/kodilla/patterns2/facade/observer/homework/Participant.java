@@ -5,7 +5,7 @@ public class Participant implements ObserverParticipants {
     private final String participantMentorName;
     private int updateCount;
 
-     public Participant(String participantName) {
+    public Participant(String participantName) {
         this.participantMentorName = participantName;
     }
 

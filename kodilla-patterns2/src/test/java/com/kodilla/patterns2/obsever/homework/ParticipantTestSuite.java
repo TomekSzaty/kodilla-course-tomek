@@ -27,7 +27,6 @@ public class ParticipantTestSuite {
         moduleTwo.addTask("Task02");
         //Then
         assertEquals(3, mentor01.getUpdateCount());
-        assertEquals(2
-                ,mentor02.getUpdateCount());
+        assertEquals(2, mentor02.getUpdateCount());
     }
 }

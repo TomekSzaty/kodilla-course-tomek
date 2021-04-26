@@ -3,7 +3,7 @@ package com.kodilla.patterns2.facade.observer.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParticipantTasks implements ObservableMentors{
+public class ParticipantTasks implements ObservableMentors {
 
     private final List<ObserverParticipants> observersMentors;
     private final List<String> tasks;
@@ -16,10 +16,12 @@ public class ParticipantTasks implements ObservableMentors{
         this.module = module;
         this.userCourseName = userCourseName;
     }
+
     public void addTask(String task) {
         tasks.add(task);
         notifyMentor();
     }
+
     @Override
     public void registerMentor(ObserverParticipants observerParticipants) {
         observersMentors.add(observerParticipants);
