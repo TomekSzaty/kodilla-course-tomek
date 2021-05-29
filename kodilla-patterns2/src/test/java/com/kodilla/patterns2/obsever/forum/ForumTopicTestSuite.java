@@ -1,9 +1,9 @@
 package com.kodilla.patterns2.obsever.forum;
 
-import com.kodilla.patterns2.facade.observer.forum.ForumTopic;
-import com.kodilla.patterns2.facade.observer.forum.ForumUser;
-import com.kodilla.patterns2.facade.observer.forum.JavaHelpForumTopic;
-import com.kodilla.patterns2.facade.observer.forum.JavaToolsForumTopic;
+import com.kodilla.patterns2.observer.forum.ForumTopic;
+import com.kodilla.patterns2.observer.forum.ForumUser;
+import com.kodilla.patterns2.observer.forum.JavaHelpForumTopic;
+import com.kodilla.patterns2.observer.forum.JavaToolsForumTopic;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

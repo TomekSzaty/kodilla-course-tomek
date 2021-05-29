@@ -1,9 +1,9 @@
 package com.kodilla.patterns2.obsever.homework;
 
-import com.kodilla.patterns2.facade.observer.homework.ModuleOne;
-import com.kodilla.patterns2.facade.observer.homework.ModuleTwo;
-import com.kodilla.patterns2.facade.observer.homework.Participant;
-import com.kodilla.patterns2.facade.observer.homework.ParticipantTasks;
+import com.kodilla.patterns2.observer.homework.ModuleOne;
+import com.kodilla.patterns2.observer.homework.ModuleTwo;
+import com.kodilla.patterns2.observer.homework.Participant;
+import com.kodilla.patterns2.observer.homework.ParticipantTasks;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,6 +1,5 @@
 package com.kodilla.patterns2.decorator.taxiportal;
 
-import com.kodilla.patterns2.facade.decorator.taxiportal.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
